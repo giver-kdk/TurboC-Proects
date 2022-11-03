@@ -1,0 +1,41 @@
+// This code is needed to be executed using TurboC++ using Linux
+#include <graphics.h>
+#include <stdio.h>
+#include <conio.h>
+
+// Function to draw moving car
+void draw(int i)
+{
+	line(0 + i, 200, 200 + i, 200);
+	line(200 + i, 200, 250 + i, 300);
+	line(200 + i, 300, 215 + i, 300);
+
+	circle(200, 300, 15);
+	circle(200, 300, 5);
+
+	line(185 + i, 300, 115 + i, 300);
+	
+	circle(100, 300, 15);
+	circle(100, 300, 5);
+
+	line(85 + i, 300, 0 + i, 300);
+	
+	line(0 + i, 300, 0 + i, 200);
+}
+
+// Driver code
+int main()
+{
+
+	int i, gd = DETECT, gm;
+	initgraph(&gd, &gm, "C:\\TurboC3\\bgi");
+	for (i = 0; i < 300; i++)
+	{
+		clrscr();
+		draw(i);
+		delay(50);
+	}
+	getch();
+	closegraph();
+	return 0;
+}

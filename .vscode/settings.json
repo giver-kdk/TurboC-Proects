@@ -1,12 +1,19 @@
 {
     "files.associations": {
-        "1+11+111.C": "cpp",
-        "stdio.h": "c",
-        "array": "c",
-        "initializer_list": "c",
-        "utility": "c",
-        "MOVING~1.C": "cpp"
-    },
+		"*.jsx": "javascriptreact",
+		"1+11+111.C": "cpp",
+		"stdio.h": "c",
+		"array": "c",
+		"initializer_list": "c",
+		"utility": "c",
+		"MOVING~1.C": "cpp",
+		"CAR.C": "cpp",
+		"BLA.C": "cpp",
+		"BLA_ME.C": "cpp",
+		"DDA.C": "cpp",
+		"BLA_CLZ.C": "cpp",
+		"ELLIPS~1.C": "cpp"
+	},
     "cmake.configureOnOpen": true,
     "C_Cpp.errorSquiggles": "Disabled"
 }

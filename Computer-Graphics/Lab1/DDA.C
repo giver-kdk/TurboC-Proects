@@ -32,7 +32,8 @@ int main()
     yi = dy / step;
     x = x1;
     y = y1;
-    initgraph(&gd, &gm, "C:\\TC\\bgi");
+    initgraph(&gd, &gm, "C:\\TurboC3\\bgi");
+    // initgraph(&gd, &gm, "C:\\TC\\bgi");              // Standard
     draw(x, y);
     while(x != x2)
     {
