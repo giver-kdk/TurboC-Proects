@@ -12,7 +12,9 @@
 		"BLA_ME.C": "cpp",
 		"DDA.C": "cpp",
 		"BLA_CLZ.C": "cpp",
-		"ELLIPS~1.C": "cpp"
+		"ELLIPS~1.C": "cpp",
+		"cmath": "c",
+		"TRANSF~1.C": "cpp"
 	},
     "cmake.configureOnOpen": true,
     "C_Cpp.errorSquiggles": "Disabled"

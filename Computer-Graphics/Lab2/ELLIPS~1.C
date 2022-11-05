@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <math.h>
 
-void midptellipse(int rx, int ry, int xc, int yc)
+void midellipse(int rx, int ry, int xc, int yc)
 {
 
 	float dx, dy, d1, d2, x, y;
@@ -85,7 +85,7 @@ int main()
 	// Better give: (10, 15)
 	scanf("%d %d", &rx, &ry);
 
-	midptellipse(rx, ry, xc, yc);
+	midellipse(rx, ry, xc, yc);
 
 	getch();
 	closegraph();

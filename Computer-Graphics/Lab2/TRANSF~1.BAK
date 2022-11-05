@@ -1,0 +1,106 @@
+#include <stdio.h>
+#include <graphics.h>
+#include <math.h>
+#define PI 3.141
+
+void createTriangle(int x1, int y1, int x2, int y2, int x3, int y3)
+{
+	delay(400);
+	line(x1, y1, x2, y2);
+	line(x1, y1, x3, y3);
+	line(x2, y2, x3, y3);
+}
+void translate(int x1, int y1, int x2, int y2, int x3, int y3, int tx, int ty)
+{
+	delay(400);
+	x1 += tx;
+	x2 += tx;
+	x3 += tx;
+	y1 += ty;
+	y2 += ty;
+	y3 += ty;
+	createTriangle(x1, y1, x2, y2, x3, y3);
+}
+void reflect(int x1, int y1, int x2, int y2, int x3, int y3, int midx, int midy)
+{
+	delay(400);
+	// Translate back by mid to origin
+	x1 -= midx;
+	x2 -= midx;
+	x3 -= midx;
+	y1 -= midy;
+	y2 -= midy;
+	y3 -= midy;
+	// Reflect about x-axis
+	y1 = -y1;
+	y2 = -y2;
+	y3 = -y3;
+	// Translate by mid to previous position
+	x1 += midx;
+	x2 += midx;
+	x3 += midx;
+	y1 += midy;
+	y2 += midy;
+	y3 += midy;
+	createTriangle(x1, y1, x2, y2, x3, y3);
+}
+void rotate(int x1, int y1, int x2, int y2, int x3, int y3, float cosVal, float sinVal, int midx, int midy)
+{
+	delay(400);
+	x1 -= midx;
+	x2 -= midx;
+	x3 -= midx;
+	y1 -= midy;
+	y2 -= midy;
+	y3 -= midy;
+	// ClockWise Rotation
+	x1 = ceil(x1 * cosVal + y1 * sinVal);
+	x2 = ceil(x2 * cosVal + y2 * sinVal);
+	x3 = ceil(x3 * cosVal + y3 * sinVal);
+
+	y1 = ceil(-(x1 * sinVal) + y1 * cosVal);
+	y2 = ceil(-(x2 * sinVal) + y2 * cosVal);
+	y3 = ceil(-(x3 * sinVal) + y3 * cosVal);
+
+	x1 += midx;
+	x2 += midx;
+	x3 += midx;
+	y1 += midy;
+	y2 += midy;
+	y3 += midy;
+	createTriangle(x1, y1, x2, y2, x3, y3);
+}
+int main()
+{
+	int x1 = 10, y1 = 10, x2 = 30, y2 = 40, x3 = 50, y3 = 20;
+	int gd = DETECT, gm;
+	int maxx, maxy, midx, midy;
+	float cosVal, sinVal;
+	float angle = (PI / 180) * 45;
+	initgraph(&gd, &gm, "C:\\TurboC3\\bgi");
+	maxx = getmaxx();
+	maxy = getmaxy();
+	midx = maxx / 2;
+	midy = maxy / 2;
+	// Draw Line
+	line(midx, 0, midx, maxy);
+	line(0, midy, maxx, midy);
+	// Create virtual origin
+	x1 += midx;
+	x2 += midx;
+	x3 += midx;
+	y1 += midy;
+	y2 += midy;
+	y3 += midy;
+	cosVal = (cos(angle));
+	sinVal = (sin(angle));
+
+	createTriangle(x1, y1, x2, y2, x3, y3);
+	translate(x1, y1, x2, y2, x3, y3, 100, 80);
+	reflect(x1, y1, x2, y2, x3, y3, midx, midy);
+	rotate(x1, y1, x2, y2, x3, y3, cosVal, sinVal, midx, midy);
+
+	getch();
+	closegraph();
+	return 0;
+}
