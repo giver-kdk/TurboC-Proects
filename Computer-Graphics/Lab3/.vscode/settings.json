@@ -1,8 +1,0 @@
-{
-	"C_Cpp.errorSquiggles": "disabled",
-	"files.associations": {
-		"*.jsx": "javascriptreact",
-		"BEIZER~1.C": "cpp",
-		"TRANSL~1.C": "cpp"
-	}
-}
