@@ -14,7 +14,8 @@
 		"BLA_CLZ.C": "cpp",
 		"ELLIPS~1.C": "cpp",
 		"cmath": "c",
-		"TRANSF~1.C": "cpp"
+		"TRANSF~1.C": "cpp",
+		"BEZIER (1).C": "cpp"
 	},
     "cmake.configureOnOpen": true,
     "C_Cpp.errorSquiggles": "Disabled"
