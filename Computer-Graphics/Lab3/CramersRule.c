@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <math.h>
+// #include <conio.h>
 
 int main()
 {
@@ -16,7 +17,7 @@ int main()
     scanf("%d %d %d", &x3, &y3, &z3);				// Use 5, 1, 9
 
     printf("Enter the point x, y, z to be tested: ");
-    scanf("%d %d %d", &x, &y, &z);
+    scanf("%d %d %d", &x, &y, &z);					// Use 1, 2, 3
 
     A = (y1*(z2 - z3)) + (y2*(z3 - z1)) + (y3*(z1 - z2));
 	printf("%d\t", A);
@@ -28,6 +29,8 @@ int main()
 	printf("%d\t", D);
 
     result = (A*x + B*y + C*z + D);
+
+	// printf("%d\n%d\n%d\n%d", A, B, C, D);
     printf("%d", result);
     if(result <= 0)
     {
@@ -37,4 +40,5 @@ int main()
     {
         printf("(%d, %d, %d) lies outside the surface", x, y, z);
     }
+	// getch();
 }
